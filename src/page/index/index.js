@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { NavBar, Icon, Popover, Carousel, WingBlank } from 'antd-mobile'; // 用多少就要引入多少吗？？
+import { NavBar, Icon, Popover, Carousel, WingBlank, Card, WhiteSpace  } from 'antd-mobile'; // 用多少就要引入多少吗？？
+import '../../style/page/index.scss';
 
 function Index(){
   const Item = Popover.Item;
@@ -8,6 +9,7 @@ function Index(){
   const [selected, setSelected]=useState('');
   const [imgHeight, setImgHeight]=useState(176);
   const [imgData, setImgData]=useState(['1', '2', '3']);
+  const [list, setList]=useState(['1', '2', '3', '4', '5']);
 
   useEffect(()=>{
     setTimeout(() => {
@@ -18,6 +20,7 @@ function Index(){
   return (
     <div>
       <NavBar
+        className="navbar"
         mode="dark"
         icon={<Icon type="left" />}
         rightContent={<Popover mask
@@ -52,7 +55,7 @@ function Index(){
       >NavBar
       </NavBar>
 
-      <WingBlank>
+      <WingBlank className="carousel-container">
         <Carousel
           autoplay={true}
           infinite
@@ -79,6 +82,34 @@ function Index(){
           ))}
         </Carousel>
       </WingBlank>
+
+      <WhiteSpace size="lg" />
+      <div class="list-container">
+      {
+        list.map(list => (
+          <div className='list-content'>
+            <Card full>
+              <Card.Header
+                title="This is title"
+                thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+                extra={<span>this is extra</span>}
+              />
+              <Card.Body>
+                <div>This is content of `Card`</div>
+              </Card.Body>
+              <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
+            </Card>
+          </div>
+        ))
+      }
+      </div>
+
+      <div className="footer">
+        <div class="footer-content">Life</div>
+        <div class="footer-content">Koubei</div>
+        <div class="footer-content">Friend</div>
+        <div class="footer-content">My</div>
+      </div>
     </div>
   );
 }
