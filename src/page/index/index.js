@@ -57,7 +57,7 @@ function Index(){
 
       <WingBlank className="carousel-container">
         <Carousel
-          autoplay={true}
+          autoplay={false}
           infinite
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
           afterChange={index => console.log('slide to', index)}
@@ -84,10 +84,10 @@ function Index(){
       </WingBlank>
 
       <WhiteSpace size="lg" />
-      <div class="list-container">
+      <div className="list-container">
       {
         list.map(list => (
-          <div className='list-content'>
+          <div className='list-content' key={list}>
             <Card full>
               <Card.Header
                 title="This is title"
@@ -105,10 +105,10 @@ function Index(){
       </div>
 
       <div className="footer">
-        <div class="footer-content">Life</div>
-        <div class="footer-content">Koubei</div>
-        <div class="footer-content">Friend</div>
-        <div class="footer-content">My</div>
+        <div className="footer-content">Life</div>
+        <div className="footer-content">Koubei</div>
+        <div className="footer-content">Friend</div>
+        <div className="footer-content">My</div>
       </div>
     </div>
   );

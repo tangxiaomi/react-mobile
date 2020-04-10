@@ -1,0 +1,28 @@
+.add-btn{
+  margin-top: 0.5rem;
+}
+
+.title-content{
+  font-weight: 600;
+}
+
+.list-container{
+  display: flex;
+  .list {
+    flex: 1;
+    .am-list-header{
+      padding-top: 10px;
+    }
+  }
+  .delete-container{
+    border-radius: 3px;
+    margin: 15px 10px 0;
+    box-sizing: border-box;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #009fff;
+    display: inline-block;
+  }
+}

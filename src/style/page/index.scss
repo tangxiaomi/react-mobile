@@ -32,5 +32,9 @@
     line-height: 60px;
     text-align: center;
     display: inline-block;
+    cursor: pointer;
+    &:hover{
+      color: #009fff;
+    }
   }
 }
