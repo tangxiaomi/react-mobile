@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { InputItem, WingBlank, WhiteSpace, TextareaItem, Button, Icon, List} from 'antd-mobile';
-import '../../style/page/todoList.scss';
+import '../todoList/todoList.scss';
 
 function TodoList(){
   const Item = List.Item;

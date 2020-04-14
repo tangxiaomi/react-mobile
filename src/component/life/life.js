@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavBar, Icon, Popover, Carousel, WingBlank, Card, WhiteSpace  } from 'antd-mobile'; // 用多少就要引入多少吗？？
-import '../../style/page/index.scss';
+import './life.scss';
+import { useHistory } from 'react-router-dom'; // 是个hooks router是5.1以上才可以用
 
-function Index(){
+function Life(){
+  let router = useHistory();
   const Item = Popover.Item;
   const myImg = src => <img src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`} className="am-icon am-icon-xs" alt="" />;
   const [visible, setVisible]=useState(false);
@@ -11,11 +13,15 @@ function Index(){
   const [imgData, setImgData]=useState(['1', '2', '3']);
   const [list, setList]=useState(['1', '2', '3', '4', '5']);
 
-  useEffect(()=>{
-    setTimeout(() => {
-      setImgData(['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI']);
-    }, 100);
- })
+//   useEffect(()=>{
+//     setTimeout(() => {
+//       setImgData(['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI']);
+//     }, 100);
+//  })
+
+ const goToDetailPage = (index) => {
+  router.push(`/detail/${index}`)
+ }
 
   return (
     <div>
@@ -86,8 +92,8 @@ function Index(){
       <WhiteSpace size="lg" />
       <div className="list-container">
       {
-        list.map(list => (
-          <div className='list-content' key={list}>
+        list.map((list, index) => (
+          <div className='list-content' key={list} onClick={() => goToDetailPage(index)}>
             <Card full>
               <Card.Header
                 title="This is title"
@@ -103,14 +109,7 @@ function Index(){
         ))
       }
       </div>
-
-      <div className="footer">
-        <div className="footer-content">Life</div>
-        <div className="footer-content">Koubei</div>
-        <div className="footer-content">Friend</div>
-        <div className="footer-content">My</div>
-      </div>
     </div>
   );
 }
-export default Index;
+export default Life;

@@ -1,0 +1,17 @@
+.header-container{
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 100%;
+  background-color: #009fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding-left: 1rem; 
+  .back{
+    float: left;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
