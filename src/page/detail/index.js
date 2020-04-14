@@ -1,6 +1,6 @@
 import React from 'react';
 import '../detail/detail.scss';
-import {  useHistory } from 'react-router-dom';
+import {  useHistory , Prompt} from 'react-router-dom';
 
 function Index(){
   const routes = useHistory();
@@ -9,6 +9,8 @@ function Index(){
   }
   return (
     <div>
+      {/* 退出当前页面的提醒 */}
+      <Prompt when={true} message="Are you sure?" />   
       <div className="header-container">
         <span className="back" onClick={() => {goBack()}}> ＜ </span>
         <span>详情页面</span>

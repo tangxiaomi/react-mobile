@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import './index.scss';
 import Life from '../../component/life/life';
 import Setting from '../../component/setting/setting';
@@ -17,10 +17,10 @@ function Index(){
         <Route path="/index/my/" component={TodoList}/>
       </div>
       <div className="footer">
-        <div className="footer-content"><Link to="/index/life/">Life</Link></div>
-        <div className="footer-content"><Link to='/index/koubei/'>Koubei</Link></div>
-        <div className="footer-content"><Link to='/index/friend/'>Friend</Link></div>
-        <div className="footer-content"><Link to='/index/my/'>My</Link></div>
+        <div className="footer-content"><NavLink to="/index/life/" activeClassName="hurray">Life</NavLink></div>
+        <div className="footer-content"><NavLink to='/index/koubei/' activeClassName="hurray">Koubei</NavLink></div>
+        <div className="footer-content"><NavLink to='/index/friend/' activeClassName="hurray">Friend</NavLink></div>
+        <div className="footer-content"><NavLink to='/index/my/' activeClassName="hurray">My</NavLink></div>
       </div>
    </div>
   );
