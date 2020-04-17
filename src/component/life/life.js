@@ -90,7 +90,7 @@ function Life(){
       </WingBlank>
 
       <WhiteSpace size="lg" />
-      <div className="list-container">
+      <div className="life-list-container">
       {
         list.map((list, index) => (
           <div className='list-content' key={list} onClick={() => goToDetailPage(index)}>

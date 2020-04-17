@@ -8,18 +8,31 @@
 
 .list-container{
   display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+  margin-left: 1rem;
   .list {
-    flex: 1;
+    width: 80%;
     .am-list-header{
       padding-top: 10px;
     }
   }
+  .time-container{
+    width: 5rem;
+    height: 76px;
+    line-height: 76px;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #009fff;
+    margin-top: 20px;
+  }
   .delete-container{
-    border-radius: 3px;
-    margin: 15px 10px 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 44px 10px 0;
     box-sizing: border-box;
-    height: 100px;
-    line-height: 100px;
     text-align: center;
     padding: 0.5rem;
     border: 1px solid #009fff;
