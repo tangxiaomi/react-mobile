@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavBar, Icon, Popover, Carousel, WingBlank, Card, WhiteSpace  } from 'antd-mobile'; // 用多少就要引入多少吗？？
 import './life.scss';
 import { useHistory } from 'react-router-dom'; // 是个hooks router是5.1以上才可以用
+import axios from 'axios';
 
 function Life(){
   let router = useHistory();
@@ -18,6 +19,18 @@ function Life(){
 //       setImgData(['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI']);
 //     }, 100);
 //  })
+
+ useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios('/api/rules/types').then( // 从接口获取数据
+        (res) => {
+          console.log('hahah');
+          console.log(res)
+        }
+      )
+    }
+    fetchData();
+  },[])
 
  const goToDetailPage = (index) => {
   router.push(`/detail/${index}`)
